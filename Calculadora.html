@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <script>
+
+        //Funciones de sumar dividir restar multiplicar y exponente.
+        function sumar(a, b) {
+
+            console.log('Introduce los valores de la suma');
+            a = prompt('Primer numero');
+            b = prompt('Segundo numero');
+            if (a != +a || b != +b) {
+                while (a != +a || b != +b) {
+                    console.log('Los valores tienen que ser numericos');
+                    a = prompt('Vuelva a intropducir el Primer numero');
+                    b = prompt('Vuelva a intropducir el Segundo numero');
+                }
+                console.log('Resultado de la suma: ' + (+a + +b));
+            } else {
+                console.log('Resultado de la suma: ' + (+a + +b));
+            }
+
+        }
+
+        function restar(a, b) {
+
+            console.log('Introduce los valores de la resta');
+            a = prompt('Primer numero');
+            b = prompt('Segundo numero');
+
+            if (a != +a || b != +b || a < b) {
+                while (a != +a || b != +b || a < b) {
+                    if (a != +a || b != +b) {
+                        console.log('Los valores tienen que ser numericos');
+                        a = prompt('Vuelva a intropducir el Primer numero');
+                        b = prompt('Vuelva a intropducir el Segundo numero');
+                    } else {
+                        console.log('El valor del primer numero tiene que se mayor que el segundo, vuelve a introducirlo');
+                        a = prompt('Vuelva a introducir el primer numero');
+                        b = prompt('Vuelva a introducir el segundo numero');
+                    }
+
+                }
+                console.log('Resultado de la resta: ' + (+a - +b));
+            } else {
+                console.log('Resultado de la resta: ' + (+a - +b));
+            }
+
+
+        }
+
+        function dividir(a, b) {
+
+            console.log('Introduce los valores de la division');
+            a = prompt('Primer numero');
+            b = prompt('Segundo numero');
+
+            if (a != +a || b != +b || a < b) {
+                while (a != +a || b != +b || a < b) {
+                    if (a != +a || b != +b) {
+                        console.log('Los valores tienen que ser numericos');
+                        a = prompt('Vuelva a intropducir el Primer numero');
+                        b = prompt('Vuelva a intropducir el Segundo numero');
+                    } else {
+                        console.log('El valor del primer numero tiene que se mayor que el segundo, vuelve a introducirlo');
+                        a = prompt('Vuelva a introducir el primer numero');
+                        b = prompt('Vuelva a introducir el segundo numero');
+                    }
+
+                }
+                console.log('Resultado de la division: ' + (+a / +b));
+            } else {
+                console.log('Resultado de la division: ' + (+a / +b));
+            }
+
+
+        }
+
+        function multiplicar(a, b) {
+
+            console.log('Introduce los valores de la multiplicacion');
+            a = prompt('Primer numero');
+            b = prompt('Segundo numero');
+
+            if (a != +a || b != +b) {
+                while (a != +a || b != +b) {
+
+                    console.log('Los valores tienen que ser numericos');
+                    a = prompt('Vuelva a intropducir el Primer numero');
+                    b = prompt('Vuelva a intropducir el Segundo numero');
+
+                }
+                console.log('Resultado de la multiplicacion: ' + (+a * +b));
+            } else {
+                console.log('Resultado de la multiplicacion: ' + (+a * +b));
+            }
+
+
+        }
+
+        // Para la funcion exponente declaro dos funciones distintas una para comprobar los valores introducidos
+        // Y otra para realizar el exponente en cuestion
+
+        function exp(a, b) {
+            let resultado=1;
+            for (let i = 1; i <= b; i++) {
+
+                resultado = resultado * a;
+            }
+            return resultado;
+        }
+
+        function exponente(a, b) {
+
+            console.log('Introduce los valores para obtener la potencia');
+            a = prompt('Base');
+            b = prompt('Exponente');
+
+            if (a != +a || b != +b || b <= 0) {
+
+                while (a != +a || b != +b || b <= 0) {
+                    if (a != +a || b != +b) {
+                        console.log('Los valores tienen que ser numericos');
+                        a = prompt('Vuelva a intropducir la base');
+                        b = prompt('Vuelva a intropducir el exponente');
+                    } else {
+                        console.log('El valor del exponente tiene que se mayor de 0, vuelve a introducirlo');
+                        b = prompt('Vuelva a introducir el exponente');
+                    }
+
+                }
+
+                console.log('Resultado de la potencia: ' + (exp(a, b)));
+            } else {
+                console.log('Resultado de la potencia: ' + (exp(a, b)));
+            }
+
+
+        }
+
+        let eleccion = 0;
+        let a = 0;
+        let b = 0;
+        console.log('Bienvenidos a calculator:');
+        do {
+
+            console.log('Selecione la operacion a realizar:');
+            console.log('1 - Suma:');
+            console.log('2 - Resta:');
+            console.log('3 - Multipiclar:');
+            console.log('4 - Dividir:');
+            console.log('5 - Potencia:');
+            console.log('6 - Salir:')
+            eleccion = +prompt('Elige una opcion: ');
+
+
+            switch (eleccion) {
+                case 1:
+                    sumar();
+                    break;
+                case 2:
+                    restar();
+                    break;
+
+                case 3:
+                    multiplicar();
+
+                    break;
+                case 4:
+                    dividir();
+                    break;
+                case 5:
+                    exponente();
+                    break;
+                case 6:
+                    console.log('Hasta la proxima')
+                    window.close();
+                    break;
+                default:
+                    console.log('Opcion no permitida vuelva a elgir.')
+                    break;
+            }
+        } while (eleccion != 6 );
+
+
+
+    </script>
+</body>
+
+</html>
